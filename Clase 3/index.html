@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 -Formulario</title>
+</head>
+<body>
+    <main>
+        <h1> Fomulario</h1>
+        <form action="">
+            <div>
+                <label for="mail">Email: </label>
+                <input type="email" name="mail" id="mail" placeholder="Ingrese su email">
+            </div>
+
+            <div>
+                <label for="name">Nombre: </label>
+                <input type="text" name="name" id="name" placeholder="Ingrese su nombre">
+            </div>
+
+            <div>
+                <label for="apellido">Apellido: </label>
+                <input type="text" id="apellido" placeholder="Ingrese su apellido">
+            </div>
+            <div>
+                <label for="edad">Edad: </label>
+                <input type="number" name="edad" id="edad" min="0" placeholder="Ingrese su edad">
+            </div>
+            <div>
+                <legend> Estudios: </legend>
+                <input type="checkbox" name="estudio1" id="estudio1"> 
+                <label for="estudios1">Primaria </label>
+                <input type="checkbox" name="estudio2" id="estudio2"> 
+                <label for="estudios2">Secundaria </label>
+                <input type="checkbox" name="estudio3" id="estudio3"> 
+                <label for="estudios3">Terciario </label>
+                <input type="checkbox" name="estudio4" id="estudio4"> 
+                <label for="estudios4">Universitario </label>
+                <input type="checkbox" name="estudio5" id="estudio5"> 
+                <label for="estudios5">Otros </label>
+                <input type="checkbox" name="estudio6" id="estudio5" checked> 
+                <label for="estudios6">Sin estudios </label>
+            </div>
+
+            <div>
+                <legend>Estado civil: </legend>
+                <input type="radio" name="estado_civil1" id="estado_civil1">
+                <label for="estado_civil1"> Soltero</label>
+                <input type="radio" name="estado_civil2" id="estado_civil2"> 
+                <label for="estado_civil2">Casado</label>
+                <input type="radio" name="estado_civil3" id="estado_civil3"> 
+                <label for="estado_civil3">Divorciado</label>
+            </div>
+
+            <div>
+                <label for="f_nac">Fecha Nacimiento: </label>
+                <input type="date" id="f_nac">
+            </div>
+
+            <div>
+                <label for="pass">Contraseña: </label>
+                <input type="password" id="pass" placeholder="Ingrese contraseña">
+            </div>
+
+            <div>
+                <label for="select">Sede</label>
+                <select name="select" id="select">
+                    <option value="1">Rosario</option>
+                    <option value="2">Buenos Aires</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="color" name="" id="">
+            </div>
+
+            <div>
+                <button type="submit"> Enviar Form</button>
+            </div>
+
+
+
+
+
+
+        </form>
+    </main>
+
+</body>
+</html>
