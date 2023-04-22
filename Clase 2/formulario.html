@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tp 3 - Formulario</title>
+</head>
+<body>
+    <main>
+        <h1> Fomulario UAI Consultas</h1>
+        <form action="">
+
+            <div>
+                <input type="text" name="name" id="name" placeholder="Nombre*" required>
+            </div>
+            <div>
+                <input type="text" id="apellido" placeholder="Apellido*" required>
+            </div>
+            <div>
+                <select name="select" id="select">
+                    <option value="" hidden selected>Tipo de documento</option>
+                    <option value="mercosur">Cédula de identidad de Mercosur</option>
+                    <option value="dni">D.N.I.</option>
+                    <option value="civica">Libreta cívica</option>
+                    <option value="dnitOrosPais">D.N.I. de otro país.</option>
+                    <option value="enrolamiento">Libreta de enrolamiento</option>
+                    <option value="documentoExtranjero">Otro documento Extranjero</option>
+                    <option value="pasaporteExtranjero">Pasaporte Extranjero</option>
+                    <option value="residenciaPrecaria">Residencia Precaria</option>
+                </select>
+            </div>
+            <div>
+                <input type="number" id="dni" placeholder="Número de documento*" min="0" required>
+            </div>
+            <div>
+                <select name="select" id="selectNumeber">
+                    <option value="fijo" seleted>Fijo</option>
+                    <option value="movil">Movil</option>
+                </select>
+            </div>
+            <div>
+                <input type="number" name="telefono" id="telefono" placeholder="Télefono*" required>
+            </div>
+            <div>
+                <input type="text" name="localidad" id="localidad" placeholder="Localidad*" required>
+            </div>
+            <div>
+                <input type="email" name="email" id="email" placeholder="Email*" required>
+            </div>
+            <div>
+                <select name="select" id="select">
+                    <option value="pregrado" disabled="">Carreras de Pregrado</option>
+                    <option value="analista"> Analista Programador (A Distancia)</option>
+                    <option value="martillero"> Martillero Público, Corredor y Administrador de Consorcio (A Distancia)</option>
+                    <option value="t_gestion"> Tecnicatura Universitaria en Gestión y Organización de Eventos (A Distancia)</option>
+                    <option value="t_ventas"> Tecnicatura Universitaria en Ventas (A Distancia)</option>
+                </select>
+            </div>
+
+
+            <div>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+            </div>
+
+            <div>
+                <input type="checkbox" name="robot" id="robot"> 
+                <label for="robot">No soy un robot </label>
+                
+            </div>
+
+
+
+            <div>
+                <button type="submit"> Enviar</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>
