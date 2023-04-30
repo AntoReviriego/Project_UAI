@@ -1,0 +1,17 @@
+main{
+    background-color: mediumaquamarine;
+}
+
+select{
+    margin-bottom: 30px;
+}
+
+input{
+    margin-bottom: 15px;
+}
+
+input[type="button"]{
+    background-color: red;
+    border: none;
+    cursor: pointer;
+}

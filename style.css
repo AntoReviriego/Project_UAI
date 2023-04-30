@@ -1,0 +1,48 @@
+header{
+    background-color: red;
+    height: 100px;
+    /* width: 200px; */
+}
+
+.nav-list{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+main{
+    background-color: aquamarine;
+    height: 550px;
+}
+
+#Section1{
+    font-size: 20px;
+    border: solid 3px black;
+}
+
+#Section2{
+    font-size: 15px;
+    color: dimgrey;
+    border: solid 3px red;
+}
+
+
+footer{
+    background-color: blueviolet;
+    height: 150px;
+    padding: 50px;
+}
+
+
+#logo{
+    background-color: yellowgreen;
+    /* border-radius: 50%; */
+    height: 70px;
+    width: 70px;
+    padding: 50px;
+    border: solid 3px black;
+    margin: 0px 0px 0px 50px;
+}
