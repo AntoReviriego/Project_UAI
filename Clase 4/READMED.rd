@@ -1,0 +1,1 @@
+Link de la noticia https://www.diarioelnorte.com.ar/bizarrapp-ya-tiene-su-propia-red-social/
