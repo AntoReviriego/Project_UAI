@@ -1,0 +1,373 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat','Montserrat', sans-serif;
+}
+
+main{
+    width: 100%;
+}
+
+p{
+    font-size: 22px;
+    line-height: 1.74;
+    text-align: justify;
+    color: #222;
+}
+
+
+.container{
+    padding: 0px 250px 0px 250px;
+}
+
+.container-secction{
+    padding: 0px 350px 0px 0px;
+}
+
+.container-secction #img-bizza{
+    width: 700px;
+}
+
+.sub-header{
+    background-color: black; 
+    height: 45px;
+}
+
+.sub-header > .container{
+    display: flex;
+    flex-direction: row;
+    color: whitesmoke;
+}
+
+.sub-header > .container > .ul li{
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 20px;
+    padding: 5px 14px;
+}
+
+.ml-50{
+    margin-left: 250px;
+}
+
+header{
+    height: 205px;
+    box-shadow: 0em 0em 1em 0em rgba(0,0,0,0.3);
+}
+
+header img {
+    padding-top: 20px;
+    width: 270px;
+    height: 90px;
+}
+
+.ul{
+    display: flex;
+    flex-direction: row;
+}
+
+/* #img-principal{
+    width:280;
+    height:100;
+} */
+
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    list-style: none;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 48px;
+    padding: 0px 14px;
+}
+
+.title{
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.h3-title{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.day{
+    margin-bottom: 16px;
+    color: #444;
+    font-size: 11px;
+    font-weight: 400;
+    clear: none;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+footer{
+    height: 330px;
+    background-color: black;
+    padding: 0px;
+}
+
+footer .container-secction #img-container a img{
+    width: 300px;
+}
+
+#img-container{
+    padding: 90px 0px 90px 200px
+}
+
+#text-info h3{
+    padding-top: 55px;
+    color: white;
+}
+
+#subinfo{
+    width: 50%;
+}
+
+#subinfo p{
+    color: #eaeaea;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer a{ 
+    color: #1aa4ce;
+}
+
+
+/*  Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    /* Header negro*/
+    .sub-header{
+        height: 140px;
+    }
+    .sub-header > .container > .ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sub-header > .container > .ul li{
+        font-size: 11px;
+        line-height: 1em;
+    }
+    
+    .ml-50{
+        margin-left: 3px;
+    }
+
+    /* Header general */
+
+    header{
+        height: 410px;
+    }
+    
+    header img {
+        padding-top: 5px;
+        width: 140px;
+        height: 50px;
+    }
+
+    ul li a{
+        font-size: 10px;
+        line-height: 1em;
+        padding: 0px 5px;
+    }
+    
+    nav .ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /****************************/
+    .container{
+        padding: 5px;
+    }
+    .container-secction{
+        padding: 0px 15px 0px 0px;
+    }
+    .container-secction #img-bizza{
+        padding-left: 0.5em;
+        width: 450px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 2em;
+    }
+    .title{
+        font-size: 20px;
+        line-height: 1em;
+    }
+    .h3-title{
+        font-size: 18px;
+    }
+
+    footer{
+        height: 285px;
+    }    
+    #img-container{
+        padding: 90px 0px 90px 15px
+    }
+    #subinfo{
+        width: 100%;
+    }
+    
+    #subinfo p{
+        font-size: 8px;
+        line-height: 1em;
+    }
+}
+
+/*  iPads, tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Header negro*/
+    .sub-header{
+        height: 50px;
+    }
+        
+    .sub-header > .container > .ul li{
+        font-size: 11px;
+        line-height: 1em;
+    }
+    
+    .ml-50{
+        margin-left: 3px;
+    }
+
+    /* Header general */
+
+    header{
+        height: 150px;
+    }
+    
+    header img {
+        padding-top: 5px;
+        width: 140px;
+        height: 50px;
+    }
+
+    ul li a{
+        font-size: 10px;
+        line-height: 1em;
+        padding: 0px 5px;
+    }
+    
+
+    /* nav .ul {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    /****************************/
+    .container{
+        padding: 5px;
+    }
+    .container-secction{
+        padding: 0px 15px 0px 0px;
+    }
+    .container-secction #img-bizza{
+        padding-left: 0.5em;
+        width: 500px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 2em;
+    }
+    .title{
+        font-size: 20px;
+        line-height: 1em;
+    }
+    .h3-title{
+        font-size: 18px;
+    }
+
+    footer{
+        height: 285px;
+    }    
+    #img-container{
+        padding: 90px 0px 90px 15px
+    }
+    #subinfo{
+        width: 100%;
+    }
+    
+    #subinfo p{
+        font-size: 8px;
+        line-height: 1em;
+    }
+}
+
+/* pantallas pequeñas, portátiles */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container{
+        padding: 0px 15px 0px 15px;
+    }
+    .container-secction{
+        padding: 0px 15px 0px 0px;
+    }
+    footer{
+        height: 285px;
+    }    
+    #img-container{
+        padding: 90px 0px 90px 15px
+    }
+    #subinfo{
+        width: 100%;
+    }
+    #subinfo p{
+        line-height: 1em;
+    }
+}
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and  (max-width: 1200px) {
+    .container{
+        padding: 0px 200px 0px 200px;
+    }
+    .container-secction{
+        padding: 0px 50px 0px 0px;
+    }
+    footer{
+        height: 285px;
+    }    
+    #img-container{
+        padding: 90px 0px 90px 15px
+    }
+    #subinfo{
+        width: 90%;
+    }
+    #subinfo p{
+        line-height: 1em;
+    }
+}
+
+
+@media only screen and (min-width: 1201px) {
+    .container{
+        padding: 0px 150px 0px 150px;
+    }
+    .container-secction{
+        padding: 0px 50px 0px 0px;
+    }
+    footer{
+        height: 285px;
+    }    
+    #img-container{
+        padding: 90px 0px 90px 150px
+    }
+    #subinfo{
+        width: 50%;
+    }
+    #subinfo p{
+        line-height: 1em;
+    }
+}
