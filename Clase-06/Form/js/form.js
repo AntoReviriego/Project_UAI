@@ -28,7 +28,7 @@ let dni = document.getElementById('dni')
 nombre.addEventListener("focus", (event) => {
     msj = ''
     insertMsgError('nombre', msj)
-    addEventListener("keyup", (g) => {
+    nombre.addEventListener("keyup", (g) => {
         if(event.target.value != ""){
             document.getElementById('form-bienvenida').innerHTML = `Hola ${g.target.value}`
         }
