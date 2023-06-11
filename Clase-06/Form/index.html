@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/reset.css">
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/styleForm.css">
+        <title>Formulario de Suscripción</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <div class="subhead">
+                    <span>Domingo, 14 de Mayo, 2023, San Nicolás de los Arroyos</span>
+                </div>
+                <div class="titulo">
+                    <img src= "../Icon/menu-icon.svg"  class="icon" alt="svg icon"/>
+                    DIARIO SEMANAL X
+                </div>
+                <nav>
+                    <ul class="ul">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="">Policiales</a></li>
+                        <li><a href="">Politica</a></li>
+                        <li><a href="">Economia</a></li>
+                        <li><a href="">Sociedad</a></li>
+                        <li><a href="">Deportes</a></li>
+                        <li><a href="">Educación</a></li>
+                        <li><a href="">Nosotros</a></li>
+                        <li><a href="#">Suscripción</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <section class="container-form p-5">
+                <h1 id="form-titulo">Formulario de Suscripción</h1>
+                <h6 id="form-bienvenida"></h6>
+                <form action="#" method="post">
+                    <div class="form">
+                        <div class="form-child-1">
+                            <div class="label-column">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" name="nombre" id="nombre" placeholder="Ej. Juan Perez" class="input-form">
+                                
+                            </div>
+                            <div class="label-column">
+                                <label for="pass">Contraseña</label>
+                                <input type="password" name="pass" id="pass" placeholder="************">
+                            </div>
+                            <div class="label-column">
+                                <label for="tel">Teléfono</label>
+                                <input type="number" name="tel" id="tel" min="0" max="9" placeholder="Ej. 3364334903">
+                            </div>
+                            <div class="label-column">
+                                <label for="ciudad">Ciudad</label>
+                                <input type="text" name="ciudad" id="ciudad" placeholder="Ej. San Nicolás de los Arroyos">
+                            </div>
+                            <div class="label-column">
+                                <label for="dni">DNI</label>
+                                <input type="number" name="dni" id="dni" placeholder="Ej. 19875369">
+                            </div>
+                        </div>
+    
+                        <div class="form-child-2">
+                            <div class="label-column">
+                                <label for="edad">Edad</label>
+                                <input type="number" name="edad" id="edad" min="1" max="100" placeholder="Ej. 18">
+                            </div>
+                            <div class="label-column">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Ej. correo@gmail.com">
+                            </div>
+                            <div class="label-column">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" name="direccion" id="direccion" placeholder="Ej. Calle ficticia 75">
+                            </div>
+                            <div class="label-column">
+                                <label for="cpostal">Código postal</label>
+                                <input type="number" name="cpostal" id="cpostal" placeholder="Ej. 2900">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-form">
+                        <button type="button" class="btn btn-dark" onclick="getValidateForm()">Enviar</button>
+                    </div>
+                </form>
+            </section>
+
+            <footer class="footer">
+                <span>Todos Los Derechos Reservados 2023</span> 
+            </footer>
+        </main>
+        <script src="./js/form.js"></script>
+    </body>
+</html>

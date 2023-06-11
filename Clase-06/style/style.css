@@ -158,6 +158,12 @@ h1 a{
     text-decoration: none;
     cursor: pointer;
 }
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
   
 /* FIN ESTILO SECCTION */
 
