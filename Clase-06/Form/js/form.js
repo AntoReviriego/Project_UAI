@@ -265,7 +265,7 @@ function getValidateForm(){
             insertMsgError('edad', msj)
         }
         if(verificacionDeCampos.length == 0 && nombre.value != '' && email.value != '' &&  pass.value != '' && direccion.value != '' && tel.value != '' && cpostal.value != '' && dni.value != '' && ciudad.value != '' && edad.value != ''){
-            var mensaje = `Nombre: ${nombre.value}\nDNI: ${dni.value}\nEdad: ${email.value}\nDireccion: ${direccion.value}\nTelefono: ${tel.value }\nCodigo Postal: ${cpostal.value}\nCiudad: ${ciudad.value}`
+            var mensaje = `Nombre: ${nombre.value}\nDNI: ${dni.value}\nEdad: ${edad.value}\nDireccion: ${direccion.value}\nTelefono: ${tel.value }\nCodigo Postal: ${cpostal.value}\nCiudad: ${ciudad.value}`
             alert(mensaje)
         }
 }
