@@ -232,6 +232,20 @@ dni.addEventListener("blur", (event) => {
     insertMsgError(idInputError, msj)
 });
 
+window.addEventListener("load", (event) => {
+    if(JSON.stringify('suscripcion') != null && JSON.stringify('suscripcion') != '' && JSON.stringify('suscripcion') != undefined){
+        var obj = JSON.parse(localStorage.getItem('suscripcion'))
+        nombre.value = obj.nombre
+        email.value = obj.email
+        pass.value = obj.pass
+        edad.value = obj.edad
+        tel.value = obj.tel
+        ciudad.value = obj.ciudad
+        cpostal.value = obj.cpostal
+        direccion.value = obj.direccion
+        dni.value = obj.dni
+    }
+});
 
 function getValidateForm(){
     var verificacionDeCampos = document.querySelectorAll('msj-error')
@@ -266,7 +280,9 @@ function getValidateForm(){
         }
         if(verificacionDeCampos.length == 0 && nombre.value != '' && email.value != '' &&  pass.value != '' && direccion.value != '' && tel.value != '' && cpostal.value != '' && dni.value != '' && ciudad.value != '' && edad.value != ''){
             var mensaje = `Nombre: ${nombre.value}\nDNI: ${dni.value}\nEdad: ${email.value}\nDireccion: ${direccion.value}\nTelefono: ${tel.value }\nCodigo Postal: ${cpostal.value}\nCiudad: ${ciudad.value}`
-            alert(mensaje)
+            insertDataForm()
+            //alert(mensaje)
+
         }
 }
 
@@ -287,4 +303,34 @@ function insertMsgError(idElementError, msj){
         parentDiv.insertAdjacentElement('beforeend', newNode)
     }
     
+}
+
+function insertDataForm(){
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            nombre: nombre.value,
+            email: email.value, 
+            pass: pass.value,
+            edad: edad.value,
+            tel: tel.value,
+            ciudad: ciudad.value,
+            cpostal: cpostal.value,
+            direccion: direccion.value,
+            dni:dni.value
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+  .then((response) => response.json())
+  .then((suscripcion) => {
+        if(JSON.stringify(suscripcion) != null && JSON.stringify(suscripcion) != '' && JSON.stringify(suscripcion) != undefined){
+            alert(`Suscripcion exitosa\n ${JSON.stringify(suscripcion)}`)
+            localStorage.setItem('suscripcion', JSON.stringify(suscripcion));
+        }
+        else{
+            alert(`Error de suscripcion`)
+        }
+    });
 }
