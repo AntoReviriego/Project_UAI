@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Dice</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <section id="form" class="d-block">
+    <form action="#" class="form">
+      <div class="form-container">
+        <span>Ingrese su nombre para poder ingresar al juego</span>
+        <div class="label-column">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Ej. Juan Perez" class="input-form" autocomplete="off">
+        </div>
+        <div class="btn-form">
+          <button type="button" id="enviar-button" class="btn btn-dark" onclick="setNombreJugador()">Ir al juego</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section id="simmon" class="d-none container">
+    <div class="container-body">
+      <h1 id="h1-bienvenida" class="container-title"></h1>
+      <h5 id="mensaje" class="container-subtitle">Presiona "Iniciar" para comenzar.</h5>
+      <div id="game-board">
+        <div class="button" id="VE" onclick="clickColor('VE')"></div>
+        <div class="button" id="RE" onclick="clickColor('RE')"></div>
+        <div class="button" id="AM" onclick="clickColor('AM')"></div>
+        <div class="button" id="AZ" onclick="clickColor('AZ')"></div>
+      </div>
+
+      <div class="contenedor-botones-simmon">
+        <button class="botones-simmon salir-simmon"   onclick="salir()">Salir</button>
+      <button class="botones-simmon iniciar-simmon" onclick="iniciarJuego()">Iniciar</button>
+      </div>
+      
+    </div>
+  </section>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
