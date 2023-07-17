@@ -156,6 +156,7 @@ var verificarSecuencia = function () {
 var finalizarJuego = function () {
     esTurnoJugador = false;
     juegoIniciado = false;
+    iniciar.disabled  = false;
     score = 0
     mostrarMensaje("¡Perdiste! Presiona 'Iniciar' para jugar de nuevo.");
 }
