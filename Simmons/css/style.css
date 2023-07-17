@@ -1,46 +1,20 @@
-/* CARD */
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    min-width: 0;
+/* Generales */
+.d-none{
+    display: none;
 }
 
-.container-body {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    min-height: 1px;
-    padding: 1.25rem;
+.d-block{
+    display: block;  
 }
-
-.container-title{
-    text-align: center;
-    margin-bottom: .75rem;
-}
-
-.container-subtitle{
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: #6c757d;
-
-}
-
-#game-board{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 
 .form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .form-container{
@@ -106,19 +80,41 @@
     border-color: #343a40;
 }
 
-/* Generales */
-.d-none{
-    display: none;
+/* CARD */
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 0;
 }
 
-.d-block{
-    display: block;  
+.container-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 1px;
+    padding: 1.25rem;
 }
 
+.container-title{
+    text-align: center;
+    margin-bottom: .75rem;
+}
 
+.container-subtitle{
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #6c757d;
 
+}
 
-
+#game-board{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 #VE {
     background-color: green;
@@ -168,8 +164,32 @@
     margin: 0.5rem;
 }
 
+.iniciar-simmon:hover{
+    background-color: #007bff;
+    color: #ffffff;
+}
+
 .salir-simmon{
     color: #6c757d;
     border-color: #6c757d;
     margin: 0.5rem;
+}
+
+.salir-simmon:hover{
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+.iniciar-simmon:disabled{
+    cursor: auto;
+    background-color: #007bff;
+    color: #ffffff;
+    opacity: .65;
+}
+
+.salir-simmon:disabled{
+    cursor: auto;
+    background-color: #6c757d;
+    color: #ffffff;
+    opacity: .65;
 }

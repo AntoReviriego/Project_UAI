@@ -6,6 +6,9 @@ var secuenciaJugador = [];
 var nivel = 0;
 var esTurnoJugador = false;
 var juegoIniciado = false;
+var score = 0;
+var iniciar = ""
+var salir = ""
 
 window.addEventListener("load", (event) => {
     if(JSON.parse(localStorage.getItem('jugador')) != null && JSON.parse(localStorage.getItem('jugador')) != '' && JSON.parse(localStorage.getItem('jugador')) != undefined){
@@ -57,18 +60,23 @@ var setNombreJugador = function() {
     }
 }
 
-function iniciarJuego() {
+var iniciarJuego = function() {
     if (!juegoIniciado) {
         juegoIniciado = true;
         nivel = 0;
+        score = 0;
         secuenciaJuego = [];
         secuenciaJugador = [];
+        iniciar = document.getElementById('iniciar-simmon');
+        iniciar.disabled = true;
+        salir = document.getElementById('salir-simmon');
         mostrarMensaje("Concentrate...");
         setTimeout(nuevoNivel, 1000);
     }
 }
 
 var nuevoNivel = function () {
+    salir.disabled  = true;
     nivel++;
     mostrarMensaje(`Nivel ${nivel}`);
     agregarColorAleatorio();
@@ -84,17 +92,20 @@ var agregarColorAleatorio = function () {
 var secuenciaSimmon = function () {
     esTurnoJugador = false;
     let i = 0;
-    const interval = setInterval(() => {
-    buttonResaltar(secuenciaJuego[i]);
-    i++;
-    if (i >= secuenciaJuego.length) {
-        clearInterval(interval);
-        setTimeout(() => {
-            esTurnoJugador = true;
-            mostrarMensaje("Es tu turno. Repite la secuencia.");
-            buttonResaltarTodos();
-        }, 500);
-    }
+    var interval = setInterval(() => {
+        buttonResaltar(secuenciaJuego[i]);
+        i++;
+        if (i >= secuenciaJuego.length) {
+            clearInterval(interval);
+            setTimeout(() => {
+                esTurnoJugador = true;
+                mostrarMensaje("Es tu turno. Repite la secuencia.");
+                buttonResaltarTodos();
+                salir.disabled  = false;
+            }, 500);
+
+        }
+       
     }, 1000);
 }
 
@@ -132,6 +143,8 @@ var verificarSecuencia = function () {
             return;
         }
     }
+    score++; 
+    mostrarMensaje('', true, true)
 
     if (secuenciaJugador.length === secuenciaJuego.length) {
         secuenciaJugador = [];
@@ -143,20 +156,32 @@ var verificarSecuencia = function () {
 var finalizarJuego = function () {
     esTurnoJugador = false;
     juegoIniciado = false;
+    score = 0
     mostrarMensaje("¡Perdiste! Presiona 'Iniciar' para jugar de nuevo.");
 }
 
-var salir = function () {
-    MostrarOcultarSimmon(false)
-    MostrarOcultarForm(false)    
+var salirJuego = function () {
+    MostrarOcultarSimmon(false);
+    MostrarOcultarForm(false);    
+    esTurnoJugador = false;
+    juegoIniciado = false;
+    score = 0;
+    nivel = 0;
+    iniciar.disabled  = false;
+    salir.disabled  = false;
     localStorage.removeItem('jugador')
 }
 
-var mostrarMensaje = function (mensaje, esBienvenida=false) {
+var mostrarMensaje = function (mensaje, esBienvenida = false, esScore = false) {
     if(!esBienvenida){
         document.getElementById('mensaje').innerText = mensaje;
     }
     else{
-        document.getElementById('h1-bienvenida').innerHTML = mensaje
+        if(esScore){
+            document.getElementById('score').innerHTML = `Score: ${score}`
+        }
+        else{
+            document.getElementById('h1-bienvenida').innerHTML = mensaje
+        }
     }
 }
