@@ -44,6 +44,11 @@
     border-radius: 0.25rem;
 }
 
+.span-error{
+    color: red;
+    font-size: 0.7rem;
+}
+
 .button {
     width: 100px;
     height: 100px;
@@ -80,7 +85,11 @@
     border-color: #343a40;
 }
 
-/* CARD */
+.btn-dark:disabled{
+    cursor: auto;
+    opacity: .65;
+}
+
 .container{
     display: flex;
     flex-direction: column;
