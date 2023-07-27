@@ -18,17 +18,19 @@
         </div>
         <div class="btn-form">
           <button type="button" id="enviar-button" class="btn btn-dark" onclick="setNombreJugador()">Ir al juego</button>
+          <a href="./Final-Formulario/index.html" target="_blank">Ver formulario de contacto</a>
         </div>
       </div>
     </form>
   </section>
 
   <section id="simmon" class="d-none">
-    <div class="container">
+    <div class="container" id="container">
       <div class="container-body">
         <h1 id="h1-bienvenida" class="container-title"></h1>
         <h3 id="mensaje" class="container-subtitle">Presiona "Iniciar" para comenzar.</h3>
         <h5 id="score" class="container-subtitle"></h5>
+        <h6 id="tiempo" class="container-subtitle"></h6>
   
         <div id="game-board">
           <div class="button" id="VE" onclick="clickColor('VE')"></div>
@@ -40,13 +42,26 @@
         <div class="contenedor-botones-simmon">
           <button id="salir-simmon" class="botones-simmon salir-simmon" onclick="salirJuego()">Salir</button>
           <button id="iniciar-simmon" class="botones-simmon iniciar-simmon" onclick="iniciarJuego()">Iniciar</button>
+          <button id="iniciar-simmon" class="botones-simmon iniciar-simmon" onclick="verRanking()">Ranking</button>
         </div>
         
       </div>
     </div>
-    
+
+
   </section>
-  
+  <!-- Modal de avisos -->
+  <div id="modal">
+    <div class="modal-container">
+      <div class="modal">
+        <h1 class="modal-title" id="titulo-modal"></h1>
+        <p class="modal-text" id="cuerpo-modal"></p>
+        <div id="tablaRanking"></div>
+        <button onclick="cerrarModal()" class="modal-boton">Volver al juego</button>
+      </div>
+    </div>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>
+

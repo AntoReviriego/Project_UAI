@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="./style/styleForm.css">
+        <title>Contactos</title>
+    </head>
+    <body>
+        <main>    
+            <section class="container-form p-5">
+                <h1 id="form-titulo">Formulario de contacto</h1>
+                <form id="formularioContacto">
+                    <div class="form">
+                        <div class="form-child-1">
+                            <div class="label-column">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" name="nombre" id="nombre" placeholder="Ej. J0anP3r3z" class="input-form">
+                            </div>
+                            <div class="label-column">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Ej. correo@gmail.com">
+                            </div>
+                            <div class="label-column">
+                                <label for="msj">Mensaje</label>
+                                <textarea id="msj" placeholder="Escribe tu mensaje"></textarea>
+                            </div>   
+                            <div class="btn-form">
+                                <button type="submit" class="btn btn-dark" disabled id="enviar">Enviar</button>
+                            </div>                      
+                        </div>
+                    </div>
+                   
+                </form>
+            </section>
+        </main>
+        <script src="./js/form.js"></script>
+    </body>
+</html>
