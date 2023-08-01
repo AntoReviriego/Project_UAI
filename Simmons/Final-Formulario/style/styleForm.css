@@ -57,7 +57,7 @@ textarea {
 }   
 
 .msj-error{
-    color: red;
+    color: #ff0000;
     font-size: 0.7rem;
 }
 

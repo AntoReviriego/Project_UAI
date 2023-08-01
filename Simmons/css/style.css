@@ -45,7 +45,7 @@
 }
 
 .span-error{
-    color: red;
+    color: #ff0000;
     font-size: 0.7rem;
 }
 
@@ -236,8 +236,8 @@ a{
     align-items: center;
     padding: 1rem;
     border-radius: .8rem;
-    background-color: aliceblue;
-    border: black 1px solid;
+    background-color: #f0f8ff;
+    border: #000000 1px solid;
     overflow: hidden;
 }
 
