@@ -52,7 +52,7 @@ function insertMsgError(idElementError, msj){
         var parentDiv = document.getElementById(idElementError).parentNode;
         parentDiv.insertAdjacentElement('beforeend', newNode);
     }
-}
+};
 
 var validacionCampos = function() {
     if(nombre.value != '' && (/^[a-zA-Z0-9]+$/).test(nombre.value) && email.value != '' && ((/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)).test(email.value) && msj.value != ''  && msj.value.length >= 5){
@@ -61,7 +61,7 @@ var validacionCampos = function() {
     else{
         enviar.disabled = true;
     }
-}
+};
 
 var correo = function(event) {
     event.preventDefault();
@@ -74,7 +74,7 @@ var correo = function(event) {
     var mailtoLink = `mailto:${email}?subject=${asunto}&body=${mensaje}`;
     // Abrir el cliente de email predeterminado
     window.location.href = mailtoLink;
-}
+};
 
 // Función para enviar el formulario y abrir el cliente de email
 document.getElementById('formularioContacto').addEventListener('submit', correo.bind(this));
