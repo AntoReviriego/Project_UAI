@@ -65,7 +65,7 @@ var validacionCampos = function() {
 var correo = function(event) {
     event.preventDefault();
     // Obtener los valores del formulario
-    const email = document.getElementById('email').value;
+    var email = document.getElementById('email').value;
     var msj = document.getElementById('msj').value;
     // Crear el enlace para abrir el cliente de email predeterminado
     var asunto = 'Asunto desde javascript';
