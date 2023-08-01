@@ -24,7 +24,6 @@ var MostrarOcultarForm = function (mostrar) {
         form.classList.remove("d-none");
         form.classList.add("d-block");
     }
-
 }
 
 var MostrarOcultarSimmon = function (mostrar) {
@@ -430,7 +429,6 @@ var ordenarHtml = function (posicion, orden) {
     tbodyRanking.innerHTML = ''; // se limpia tabla, y se inserta el nuevo oreden
     filasRanking.forEach(x => tbodyRanking.appendChild(x));
 }
-
 
 window.addEventListener("load", getLocalStorage);
 nombre.addEventListener("blur", validacionForm);

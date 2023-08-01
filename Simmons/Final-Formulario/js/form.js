@@ -6,6 +6,7 @@ var enviar = document.getElementById('enviar');
 nombre.addEventListener("focus", (event) => {
     insertMsgError('nombre', '')
 });
+
 nombre.addEventListener("blur", (event) => {
     if(event.target.value == "" || !(/^[a-zA-Z0-9]+$/).test(event.target.value)){
         insertMsgError('nombre', 'El nombre debe ser alfanumerico')
@@ -16,6 +17,7 @@ nombre.addEventListener("blur", (event) => {
 email.addEventListener("focus", (event) => {
     insertMsgError('email', '')
 });
+
 email.addEventListener("blur", (event) => {
     if(event.target.value == '' || !(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/).test(event.target.value)){
         insertMsgError('email', 'El email no es válido')
@@ -26,12 +28,12 @@ email.addEventListener("blur", (event) => {
 msj.addEventListener("focus", (event) => {
     insertMsgError('msj', '')
 });
+
 msj.addEventListener("blur", (event) => {
     if(event.target.value == '' || event.target.value.length < 5){
         insertMsgError('msj', 'El mensaje no puede esta vacio. Al menos 5 letras.')
     } 
     validacionCampos();
-    
 });
 
 
@@ -50,7 +52,6 @@ function insertMsgError(idElementError, msj){
         var parentDiv = document.getElementById(idElementError).parentNode;
         parentDiv.insertAdjacentElement('beforeend', newNode)
     }
-    
 }
 
 var validacionCampos = function() {
@@ -77,4 +78,3 @@ var correo = function(event) {
 
 // Función para enviar el formulario y abrir el cliente de email
 document.getElementById('formularioContacto').addEventListener('submit', correo.bind(this));
-
