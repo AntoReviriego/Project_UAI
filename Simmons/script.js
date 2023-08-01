@@ -337,7 +337,10 @@ var cerrarModal = function() {
     var modal = document.getElementById("modal");
     modal.style.display = "none";
     var removerTabla = document.getElementById("tablaRanking").firstChild;
-    removerTabla.remove()
+    if(removerTabla != null){
+        removerTabla.remove()
+    }
+
 }
 
 var abrirModal = function(titulo, msj, visualizarTabla = false){
