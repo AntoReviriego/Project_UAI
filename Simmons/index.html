@@ -17,7 +17,7 @@
           <span class="span-error" id="msj-error"> </span>
         </div>
         <div class="btn-form">
-          <button type="button" id="enviar-button" class="btn btn-dark" onclick="setNombreJugador()">Ir al juego</button>
+          <button type="button" id="enviar-button" class="btn btn-dark">Ir al juego</button>
           <a href="./Final-Formulario/index.html" target="_blank">Ver formulario de contacto</a>
         </div>
       </div>
@@ -33,16 +33,16 @@
         <h6 id="tiempo" class="container-subtitle"></h6>
   
         <div id="game-board">
-          <div class="button" id="VE" onclick="clickColor('VE')"></div>
-          <div class="button" id="RE" onclick="clickColor('RE')"></div>
-          <div class="button" id="AM" onclick="clickColor('AM')"></div>
-          <div class="button" id="AZ" onclick="clickColor('AZ')"></div>
+          <div class="button" id="VE"></div>
+          <div class="button" id="RE"></div>
+          <div class="button" id="AM"></div>
+          <div class="button" id="AZ"></div>
         </div>
   
         <div class="contenedor-botones-simmon">
-          <button id="salir-simmon" class="botones-simmon salir-simmon" onclick="salirJuego()">Salir</button>
-          <button id="iniciar-simmon" class="botones-simmon iniciar-simmon" onclick="iniciarJuego()">Iniciar</button>
-          <button id="ver-ranking" class="botones-simmon iniciar-simmon" onclick="verRanking()">Ranking</button>
+          <button id="salir-simmon" class="botones-simmon salir-simmon">Salir</button>
+          <button id="iniciar-simmon" class="botones-simmon iniciar-simmon">Iniciar</button>
+          <button id="ver-ranking" class="botones-simmon iniciar-simmon">Ranking</button>
         </div>
         
       </div>
@@ -56,11 +56,11 @@
         <h1 class="modal-title" id="titulo-modal"></h1>
         <p class="modal-text" id="cuerpo-modal"></p>
         <div id="tabla-ranking"></div>
-        <button onclick="cerrarModal()" class="modal-boton">Volver al juego</button>
+        <button id="cerrar-modal" class="modal-boton">Volver al juego</button>
       </div>
     </div>
   </div>
-  
+
   <script src="./script.js"></script>
 </body>
 </html>

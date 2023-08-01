@@ -1,5 +1,14 @@
 /* Variables necesarias para el juego */
-var nombre = document.getElementById('nombre')
+var nombre = document.getElementById('nombre');
+var enviarButton = document.getElementById('enviar-button');
+var VE = document.getElementById('VE');
+var RE = document.getElementById('RE');
+var AM = document.getElementById('AM');
+var AZ = document.getElementById('AZ');
+var iniciar = document.getElementById('iniciar-simmon');
+var salir = document.getElementById('salir-simmon'); 
+var rankingTabla = document.getElementById('ver-ranking');
+var botonCerrarModal = document.getElementById('cerrar-modal');
 var buttons = ['VE', 'RE', 'AM', 'AZ'];
 var secuenciaJuego = [];
 var secuenciaJugador = [];
@@ -7,8 +16,6 @@ var nivel = 0;
 var esTurnoJugador = false;
 var juegoIniciado = false;
 var score = 0;
-var iniciar = '';
-var salir = '';
 var velocidadRepeticion = 500; 
 var temporizador = 0;
 var intervalTiempo;
@@ -118,9 +125,7 @@ var iniciarJuego = function() {
         temporizador = 0;
         secuenciaJuego = [];
         secuenciaJugador = [];
-        iniciar = document.getElementById('iniciar-simmon');
         iniciar.disabled = true;
-        salir = document.getElementById('salir-simmon');
         mostrarMensaje('Concentrate...');
         setTimeout(nuevoNivel, 1000);
     }
@@ -279,7 +284,7 @@ var salirJuego = function () {
     nivel = 0;
     iniciar.disabled  = false;
     iniciar.innerHTML = 'Iniciar';
-    nombre.innerHTML = '';
+    nombre.value = '';
     salir.disabled  = false;
     localStorage.removeItem('jugador');
     localStorage.removeItem('simmonMemoria');
@@ -307,7 +312,6 @@ var retomarJuego = function () {
     mostrarMensaje('', true, true); // Score
     detenerTiempo();
     secuenciaSimmon(); // Repite secuencia guardada
-    iniciar = document.getElementById('iniciar-simmon');
     iniciar.disabled  = true;
 };
 
@@ -347,7 +351,6 @@ var abrirModal = function(titulo, msj, visualizarTabla = false){
     var cuerpoModal = document.getElementById('cuerpo-modal');
     cuerpoModal.innerHTML = msj;
     if(!visualizarTabla){
-        var iniciar =  document.getElementById('iniciar-simmon');
         iniciar.innerHTML =  'Reiniciar';
         setTimeout(() => {
             modal.style.display = 'none';
@@ -428,3 +431,12 @@ var ordenarHtml = function (posicion, orden) {
 
 window.addEventListener('load', getLocalStorage);
 nombre.addEventListener('blur', validacionForm);
+enviarButton.addEventListener('click', setNombreJugador);
+VE.addEventListener('click', () => { clickColor('VE') });
+RE.addEventListener('click', () => { clickColor('RE') });
+AM.addEventListener('click', () => { clickColor('AM') });
+AZ.addEventListener('click', () => { clickColor('AZ') });
+iniciar.addEventListener('click', iniciarJuego);
+salir.addEventListener('click', salirJuego);
+rankingTabla.addEventListener('click', verRanking);
+botonCerrarModal.addEventListener('click', cerrarModal)
