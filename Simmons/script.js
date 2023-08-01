@@ -167,7 +167,8 @@ var secuenciaSimmon = function () {
 }
 
 var velocidadRepeticionSimmon = function () {
-    velocidadRepeticion = velocidadRepeticion - 50; // 500ms = 0.5s, por cada vuelta le estaremos sacando 50ms = 0.05s, para aumentar su velocidad
+    /* En caso de llegar a 0, reseteo la velocidad otra ves en 500ms */
+    velocidadRepeticion = velocidadRepeticion !== 0 ? (velocidadRepeticion - 50) : 500; // 500ms = 0.5s, por cada vuelta le estaremos sacando 50ms = 0.05s, para aumentar su velocidad
     return velocidadRepeticion;
 }
 
