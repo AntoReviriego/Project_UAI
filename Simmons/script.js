@@ -337,7 +337,7 @@ var verRanking = function() {
 var cerrarModal = function() {
     var modal = document.getElementById("modal");
     modal.style.display = "none";
-    var removerTabla = document.getElementById("tablaRanking").firstChild;
+    var removerTabla = document.getElementById("tabla-ranking").firstChild;
     if(removerTabla != null){
         removerTabla.remove()
     }
@@ -362,7 +362,7 @@ var abrirModal = function(titulo, msj, visualizarTabla = false){
     else{
         // Informacion LocalStorage
         var ranking = JSON.parse(localStorage.getItem('ranking'))
-        var div = document.getElementById("tablaRanking")
+        var div = document.getElementById("tabla-ranking")
         if(ranking != null && ranking != '' && ranking != undefined){
             var headers = ['Nombre', 'Puntaje', 'Nivel', 'Fecha']
             var table = document.createElement("table")

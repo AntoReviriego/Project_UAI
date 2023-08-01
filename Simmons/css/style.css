@@ -269,18 +269,18 @@ a{
 }
 
 /* Tabla Ranking */
-#tablaRanking{
+#tabla-ranking{
     max-height: 300px;
     overflow: auto;
 }
 
 /* Scroll de contenedor de la tabla */
-#tablaRanking::-webkit-scrollbar {
+#tabla-ranking::-webkit-scrollbar {
     width: 0.1rem;
 
 }
 /* Estilos barra (thumb) de scroll */
-#tablaRanking::-webkit-scrollbar-thumb {
+#tabla-ranking::-webkit-scrollbar-thumb {
     background-color: #696969;
 }
 
