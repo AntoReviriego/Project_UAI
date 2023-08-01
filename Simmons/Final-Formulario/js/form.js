@@ -77,4 +77,4 @@ var correo = function(event) {
 };
 
 // Función para enviar el formulario y abrir el cliente de email
-document.getElementById('formularioContacto').addEventListener('submit', correo.bind(this));
+document.getElementById('formulario-contacto').addEventListener('submit', correo.bind(this));
