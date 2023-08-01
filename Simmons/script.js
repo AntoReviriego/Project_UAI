@@ -7,8 +7,8 @@ var nivel = 0;
 var esTurnoJugador = false;
 var juegoIniciado = false;
 var score = 0;
-var iniciar = "";
-var salir = "";
+var iniciar = '';
+var salir = '';
 var velocidadRepeticion = 500; 
 var temporizador = 0;
 var intervalTiempo;
@@ -16,20 +16,20 @@ var intervalTiempo;
 var MostrarOcultarForm = function (mostrar) {
     var form = document.getElementById('form');
     if(mostrar){
-        form.classList.remove("d-block");
-        nombre.innerHTML = "";
-        form.classList.add("d-none");
+        form.classList.remove('d-block');
+        nombre.innerHTML = '';
+        form.classList.add('d-none');
     }
     else{
-        form.classList.remove("d-none");
-        form.classList.add("d-block");
+        form.classList.remove('d-none');
+        form.classList.add('d-block');
     }
 };
 
 var MostrarOcultarSimmon = function (mostrar) {
     var simmon = document.getElementById('simmon');
     if(mostrar){
-        simmon.classList.remove("d-none");
+        simmon.classList.remove('d-none');
         nivel = 0;
         score = 0;
         temporizador = 0;
@@ -37,18 +37,18 @@ var MostrarOcultarSimmon = function (mostrar) {
         secuenciaJugador = [];
     }
     else{
-        simmon.classList.add("d-none");
+        simmon.classList.add('d-none');
     }
 };
 
 var SetLocalStorage = function(name, esScore = false, esRanking=false) {
-    var nombreObjeto = "";
+    var nombreObjeto = '';
     var objeto = {};
     if(!esScore && !esRanking){
         objeto = {
             nameUser: name
         };
-        nombreObjeto = "jugador";
+        nombreObjeto = 'jugador';
     }
     else{
         if(esScore){
@@ -58,7 +58,7 @@ var SetLocalStorage = function(name, esScore = false, esRanking=false) {
                 secuencia: secuenciaJuego, 
                 velocidad: velocidadRepeticion
             };
-            nombreObjeto = "simmonMemoria";
+            nombreObjeto = 'simmonMemoria';
         }
         else{
             objeto = {
@@ -77,7 +77,7 @@ var SetLocalStorage = function(name, esScore = false, esRanking=false) {
             }
             objetoCopia.push(objeto);
             objeto = objetoCopia;
-            nombreObjeto = "ranking";
+            nombreObjeto = 'ranking';
         }
     }
     localStorage.setItem(nombreObjeto, JSON.stringify(objeto));
@@ -102,7 +102,7 @@ var getLocalStorage = function () {
 };
 
 var setNombreJugador = function() {
-    if(nombre.value != "" && nombre.value != undefined && nombre.value != null && nombre.value.length > 3){
+    if(nombre.value != '' && nombre.value != undefined && nombre.value != null && nombre.value.length > 3){
         MostrarOcultarForm(true);
         MostrarOcultarSimmon(true);
         mostrarMensaje(`Bienvenido al juego de Simon Dice, ${nombre.value}`, true);
@@ -121,7 +121,7 @@ var iniciarJuego = function() {
         iniciar = document.getElementById('iniciar-simmon');
         iniciar.disabled = true;
         salir = document.getElementById('salir-simmon');
-        mostrarMensaje("Concentrate...");
+        mostrarMensaje('Concentrate...');
         setTimeout(nuevoNivel, 1000);
     }
 };
@@ -152,7 +152,7 @@ var secuenciaSimmon = function () {
                 esTurnoJugador = true;
                 /* ejecutamos temporizador */
                 intervalTiempo = setInterval(mostrarTiempo, 1000); 
-                mostrarMensaje("Es tu turno. Repite la secuencia.");
+                mostrarMensaje('Es tu turno. Repite la secuencia.');
                 buttonResaltarTodos();
                 velocidadRepeticionSimmon();
                 SetLocalStorage('', true);
@@ -268,8 +268,8 @@ var finalizarJuego = function () {
     detenerTiempo();
     localStorage.removeItem('simmonMemoria');
     mostrarMensaje('', true, true);
-    //mostrarMensaje("¡Perdiste! Presiona 'Iniciar' para jugar de nuevo.");
-    abrirModal("¡Perdiste!", "Presiona 'Reiniciar' para jugar de nuevo.");
+    //mostrarMensaje('¡Perdiste! Presiona 'Iniciar' para jugar de nuevo.');
+    abrirModal('¡Perdiste!', 'Presiona "Reiniciar" para jugar de nuevo.');
 };
 
 var salirJuego = function () {
@@ -278,8 +278,8 @@ var salirJuego = function () {
     score = 0;
     nivel = 0;
     iniciar.disabled  = false;
-    iniciar.innerHTML = "Iniciar";
-    nombre.innerHTML = "";
+    iniciar.innerHTML = 'Iniciar';
+    nombre.innerHTML = '';
     salir.disabled  = false;
     localStorage.removeItem('jugador');
     localStorage.removeItem('simmonMemoria');
@@ -313,7 +313,7 @@ var retomarJuego = function () {
 
 var validacionForm = function () {
     var html = document.getElementById('msj-error');
-    if(nombre.value == ""){
+    if(nombre.value == ''){
         html.innerHTML = 'Este campo es obligatorio para continuar.';
     }
     else{
@@ -327,43 +327,43 @@ var validacionForm = function () {
 };
 
 var verRanking = function() {
-    abrirModal("Ranking", "Últimos que entraron", true);
+    abrirModal('Ranking', 'Últimos que entraron', true);
 };
 
 var cerrarModal = function() {
-    var modal = document.getElementById("modal");
-    modal.style.display = "none";
-    var removerTabla = document.getElementById("tabla-ranking").firstChild;
+    var modal = document.getElementById('modal');
+    modal.style.display = 'none';
+    var removerTabla = document.getElementById('tabla-ranking').firstChild;
     if(removerTabla != null){
         removerTabla.remove();
     }
 };
 
 var abrirModal = function(titulo, msj, visualizarTabla = false){
-    mostrarMensaje("");
-    var modal = document.getElementById("modal");
-    modal.style.display = "flex";
-    document.getElementById("titulo-modal").innerHTML = titulo;
-    var cuerpoModal = document.getElementById("cuerpo-modal");
+    mostrarMensaje('');
+    var modal = document.getElementById('modal');
+    modal.style.display = 'flex';
+    document.getElementById('titulo-modal').innerHTML = titulo;
+    var cuerpoModal = document.getElementById('cuerpo-modal');
     cuerpoModal.innerHTML = msj;
     if(!visualizarTabla){
         var iniciar =  document.getElementById('iniciar-simmon');
         iniciar.innerHTML =  'Reiniciar';
         setTimeout(() => {
-            modal.style.display = "none";
-            mostrarMensaje("Presiona 'Reiniciar' para jugar de nuevo.");
+            modal.style.display = 'none';
+            mostrarMensaje('Presiona "Reiniciar" para jugar de nuevo.');
         }, 2000);
     }
     else{
         // Informacion LocalStorage
         var ranking = JSON.parse(localStorage.getItem('ranking'));
-        var div = document.getElementById("tabla-ranking");
+        var div = document.getElementById('tabla-ranking');
         if(ranking != null && ranking != '' && ranking != undefined){
             var headers = ['Nombre', 'Puntaje', 'Nivel', 'Fecha'];
-            var table = document.createElement("table");
+            var table = document.createElement('table');
             table.className = 'sortable';
-            var thead = document.createElement("thead");
-            var tbody = document.createElement("tbody");
+            var thead = document.createElement('thead');
+            var tbody = document.createElement('tbody');
             var tr = document.createElement('tr');
             var th =  document.createElement('th');
             div.appendChild(table);
@@ -392,7 +392,7 @@ var abrirModal = function(titulo, msj, visualizarTabla = false){
             });
         }
         else{
-            var p = document.createElement("p");
+            var p = document.createElement('p');
             p.innerHTML = 'Todavia no se ha juagado';
             p.className = 'p';
             div.appendChild(p);
@@ -426,5 +426,5 @@ var ordenarHtml = function (posicion, orden) {
     filasRanking.forEach(x => tbodyRanking.appendChild(x));
 };
 
-window.addEventListener("load", getLocalStorage);
-nombre.addEventListener("blur", validacionForm);
+window.addEventListener('load', getLocalStorage);
+nombre.addEventListener('blur', validacionForm);

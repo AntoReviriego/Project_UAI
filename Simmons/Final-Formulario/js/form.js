@@ -3,33 +3,33 @@ var email = document.getElementById('email');
 var msj = document.getElementById('msj');
 var enviar = document.getElementById('enviar');
 
-nombre.addEventListener("focus", (event) => {
+nombre.addEventListener('focus', (event) => {
     insertMsgError('nombre', '');
 });
 
-nombre.addEventListener("blur", (event) => {
-    if(event.target.value == "" || !(/^[a-zA-Z0-9]+$/).test(event.target.value)){
+nombre.addEventListener('blur', (event) => {
+    if(event.target.value == '' || !(/^[a-zA-Z0-9]+$/).test(event.target.value)){
         insertMsgError('nombre', 'El nombre debe ser alfanumerico')
     }
     validacionCampos();
 });
 
-email.addEventListener("focus", (event) => {
+email.addEventListener('focus', (event) => {
     insertMsgError('email', '');
 });
 
-email.addEventListener("blur", (event) => {
+email.addEventListener('blur', (event) => {
     if(event.target.value == '' || !(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/).test(event.target.value)){
         insertMsgError('email', 'El email no es válido');
     } 
     validacionCampos();
 });
 
-msj.addEventListener("focus", (event) => {
+msj.addEventListener('focus', (event) => {
     insertMsgError('msj', '');
 });
 
-msj.addEventListener("blur", (event) => {
+msj.addEventListener('blur', (event) => {
     if(event.target.value == '' || event.target.value.length < 5){
         insertMsgError('msj', 'El mensaje no puede esta vacio. Al menos 5 letras.');
     } 
@@ -45,9 +45,9 @@ function insertMsgError(idElementError, msj){
 
     if(msj != ''){
         // Nodo a insertar
-        var newNode = document.createElement("span");
+        var newNode = document.createElement('span');
         newNode.textContent = msj;
-        newNode.classList.add("msj-error");
+        newNode.classList.add('msj-error');
         // Obtener una referencia al nodo padre
         var parentDiv = document.getElementById(idElementError).parentNode;
         parentDiv.insertAdjacentElement('beforeend', newNode);
@@ -55,7 +55,7 @@ function insertMsgError(idElementError, msj){
 }
 
 var validacionCampos = function() {
-    if(nombre.value != "" && (/^[a-zA-Z0-9]+$/).test(nombre.value) && email.value != "" && ((/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)).test(email.value) && msj.value != ''  && msj.value.length >= 5){
+    if(nombre.value != '' && (/^[a-zA-Z0-9]+$/).test(nombre.value) && email.value != '' && ((/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)).test(email.value) && msj.value != ''  && msj.value.length >= 5){
         enviar.disabled = false;
     }
     else{
