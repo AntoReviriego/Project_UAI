@@ -4,7 +4,7 @@ var msj = document.getElementById('msj');
 var enviar = document.getElementById('enviar');
 
 nombre.addEventListener("focus", (event) => {
-    insertMsgError('nombre', '')
+    insertMsgError('nombre', '');
 });
 
 nombre.addEventListener("blur", (event) => {
@@ -15,23 +15,23 @@ nombre.addEventListener("blur", (event) => {
 });
 
 email.addEventListener("focus", (event) => {
-    insertMsgError('email', '')
+    insertMsgError('email', '');
 });
 
 email.addEventListener("blur", (event) => {
     if(event.target.value == '' || !(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/).test(event.target.value)){
-        insertMsgError('email', 'El email no es válido')
+        insertMsgError('email', 'El email no es válido');
     } 
     validacionCampos();
 });
 
 msj.addEventListener("focus", (event) => {
-    insertMsgError('msj', '')
+    insertMsgError('msj', '');
 });
 
 msj.addEventListener("blur", (event) => {
     if(event.target.value == '' || event.target.value.length < 5){
-        insertMsgError('msj', 'El mensaje no puede esta vacio. Al menos 5 letras.')
+        insertMsgError('msj', 'El mensaje no puede esta vacio. Al menos 5 letras.');
     } 
     validacionCampos();
 });
@@ -46,20 +46,20 @@ function insertMsgError(idElementError, msj){
     if(msj != ''){
         // Nodo a insertar
         var newNode = document.createElement("span");
-        newNode.textContent = msj
+        newNode.textContent = msj;
         newNode.classList.add("msj-error");
         // Obtener una referencia al nodo padre
         var parentDiv = document.getElementById(idElementError).parentNode;
-        parentDiv.insertAdjacentElement('beforeend', newNode)
+        parentDiv.insertAdjacentElement('beforeend', newNode);
     }
 }
 
 var validacionCampos = function() {
     if(nombre.value != "" && (/^[a-zA-Z0-9]+$/).test(nombre.value) && email.value != "" && ((/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)).test(email.value) && msj.value != ''  && msj.value.length >= 5){
-        enviar.disabled = false
+        enviar.disabled = false;
     }
     else{
-        enviar.disabled = true
+        enviar.disabled = true;
     }
 }
 
